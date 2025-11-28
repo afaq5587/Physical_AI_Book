@@ -173,7 +173,6 @@ if __name__ == '__main__':
 
 ## Hands-On Project
 
-:::tip Build It Yourself
 **Goal**: Create [specific deliverable]
 **Time**: ~45 minutes
 **Difficulty**: ⭐⭐⭐
