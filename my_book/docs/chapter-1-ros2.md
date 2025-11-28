@@ -1,0 +1,41 @@
+# Chapter 1: The Robotic Nervous System (ROS 2)
+**Coverage**: Weeks 3-5
+
+**Topics**:
+- **What is ROS 2 and why it matters**:
+  - The evolution from ROS 1 to ROS 2, addressing modern robotics challenges.
+  - Key advantages: DDS for real-time communication, security, multi-robot support, and embedded systems compatibility.
+  - Use cases in autonomous vehicles, industrial automation, and humanoid robotics.
+- **ROS 2 architecture: nodes, topics, services, actions**:
+  - **Nodes**: The fundamental processing units in ROS 2.
+  - **Topics**: Asynchronous, many-to-many communication for data streams.
+  - **Services**: Synchronous, request-response communication for specific tasks.
+  - **Actions**: Long-running, goal-based tasks with feedback and preemption capabilities.
+- **Installing ROS 2 Humble on Ubuntu 22.04**:
+  - Step-by-step guide for setting up the development environment.
+  - Understanding different installation methods (binaries, source).
+  - Environment setup and sourcing the ROS 2 environment.
+- **Creating your first node in Python with rclpy**:
+  - Introduction to `rclpy`, the Python client library for ROS 2.
+  - Writing a simple publisher and subscriber node.
+  - Compiling and running a basic ROS 2 Python package.
+- **Publisher-subscriber communication patterns**:
+  - In-depth look at message types, QoS settings, and data serialization.
+  - Implementing complex data flows between multiple nodes.
+  - Tools for inspecting topic communication (`ros2 topic info`, `ros2 topic echo`).
+- **Building ROS 2 packages**:
+  - Understanding `colcon` build system and workspace management.
+  - Creating `package.xml` and `setup.py` files for Python packages.
+  - Managing dependencies and cross-package communication.
+- **URDF (Unified Robot Description Format) for humanoids**:
+  - Defining robot geometry, kinematics, and visual properties.
+  - Understanding joints, links, and coordinate frames.
+  - Visualizing URDF models in RViz2.
+- **Launch files and parameter management**:
+  - Orchestrating multiple nodes and processes with Python launch files.
+  - Passing parameters to nodes and dynamic parameter reconfiguration.
+  - Grouping nodes and managing node lifecycles.
+- **Hands-on: Build a multi-node robot control system**:
+  - Practical exercise combining all learned concepts to control a simulated robot.
+  - Designing a modular system with separate nodes for perception, planning, and control.
+  - Debugging and optimizing the multi-node system.

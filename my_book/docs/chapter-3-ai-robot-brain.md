@@ -1,0 +1,44 @@
+# Chapter 3: The AI-Robot Brain (NVIDIA Isaac)
+**Coverage**: Weeks 8-10
+
+**Topics**:
+- **NVIDIA Isaac platform overview**:
+  - Introduction to the NVIDIA Isaac robotics platform and its ecosystem.
+  - Components: Isaac Sim, Isaac ROS, Jetson platform.
+  - Advantages for AI-driven robotics development.
+- **Installing Isaac Sim (Omniverse)**:
+  - Step-by-step guide for setting up Isaac Sim on a powerful workstation.
+  - Navigating the NVIDIA Omniverse platform.
+  - Basic scene creation and robot import.
+- **Photorealistic simulation and synthetic data**:
+  - Generating high-quality synthetic datasets for training AI models.
+  - Customizing environments, lighting, and materials for diverse data.
+  - Data augmentation techniques in simulation.
+- **Isaac ROS for hardware-accelerated perception**:
+  - Leveraging GPU acceleration for real-time perception tasks.
+  - Key Isaac ROS packages: NITROS, Image Pipeline, Depth Perception.
+  - Integrating Isaac ROS with existing ROS 2 systems.
+- **VSLAM (Visual SLAM) implementation**:
+  - Principles of Visual Simultaneous Localization and Mapping.
+  - Implementing VSLAM using Isaac ROS modules.
+  - Evaluating VSLAM performance in simulated and real-world scenarios.
+- **Nav2 navigation and path planning**:
+  - Deep dive into ROS 2 Nav2 stack for autonomous navigation.
+  - Configuring Nav2 components: global planner, local planner, costmaps.
+  - Implementing goal-driven navigation in complex environments.
+- **Bipedal humanoid locomotion challenges**:
+  - Understanding the complexities of bipedal balance and gait generation.
+  - Control strategies for humanoid robots (ZMP, LIPM).
+  - Simulating and analyzing humanoid movement in Isaac Sim.
+- **Reinforcement learning for robot control**:
+  - Introduction to RL concepts for continuous control tasks.
+  - Training humanoid robots to walk and perform tasks using Isaac Gym.
+  - Reward function design and policy optimization.
+- **Sim-to-real transfer techniques**:
+  - Bridging the gap between simulation and physical robot deployment.
+  - Domain randomization, transfer learning, and calibration methods.
+  - Best practices for successful sim-to-real deployment.
+- **Hands-on: Autonomous navigation system**:
+  - Practical exercise: building an autonomous navigation system for a humanoid robot.
+  - Integrating VSLAM, Nav2, and custom control modules.
+  - Testing the system in a simulated environment.
