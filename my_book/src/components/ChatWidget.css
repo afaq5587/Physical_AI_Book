@@ -25,7 +25,7 @@
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .chat-toggle-btn:hover {
@@ -215,3 +215,147 @@
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
+
+/* ========================================
+   GREETING TOOLTIP STYLES
+   ======================================== */
+
+/* Greeting Tooltip Container - Overlay on Button */
+.chat-greeting-tooltip {
+  position: absolute;
+  top: -125px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 100%);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(118, 75, 162, 0.6), 0 0 20px rgba(118, 75, 162, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  width: 220px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  animation: tooltipBounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), tooltipGlow 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Bounce in animation */
+@keyframes tooltipBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* Subtle glow effect */
+@keyframes tooltipGlow {
+  0%, 100% {
+    box-shadow: 0 12px 35px rgba(118, 75, 162, 0.6), 0 0 20px rgba(118, 75, 162, 0.4);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(118, 75, 162, 0.8), 0 0 30px rgba(118, 75, 162, 0.6);
+  }
+}
+
+/* Tooltip arrow pointing down to the button */
+.chat-greeting-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(118, 75, 162, 0.98);
+}
+
+/* Greeting icon (waving hand) */
+.greeting-icon {
+  font-size: 28px;
+  animation: wave 1.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+/* Waving animation */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(14deg);
+  }
+  20%, 40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Greeting text */
+.greeting-text {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.greeting-text strong {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+  letter-spacing: 0.3px;
+}
+
+/* Hover effect on chat button shows tooltip */
+.chat-toggle-btn:hover .chat-greeting-tooltip {
+  animation: tooltipFloat 2s ease-in-out infinite;
+}
+
+@keyframes tooltipFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+/* Mobile responsiveness for tooltip */
+@media (max-width: 480px) {
+  .chat-greeting-tooltip {
+    top: -110px;
+    min-width: 150px;
+    max-width: 180px;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+  
+  .greeting-icon {
+    font-size: 22px;
+  }
+  
+  .greeting-text strong {
+    font-size: 13px;
+  }
+}
+
