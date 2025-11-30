@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'Bridging Digital Intelligence with Physical Reality',
-  favicon: 'img/favicon.ico',
+  // favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://yourusername.github.io',
+  url: 'https://github.com/afaq5587/Physical_AI_Book/tree/main/my_book/docs',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/physical-ai-textbook/',
@@ -51,7 +51,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/yourusername/physical-ai-textbook/edit/main/',
+            'https://github.https://github.com/afaq5587/Physical_AI_Book/tree/main/',
         },
         theme: {
         },
@@ -69,10 +69,10 @@ const config = {
       },
       navbar: {
         title: 'Physical AI',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        // logo: {
+        //   alt: 'My Site Logo',
+        //   src: 'img/logo.svg',
+        // },
         items: [
           {
             type: 'docSidebar',
@@ -81,7 +81,7 @@ const config = {
             label: 'Course',
           },
           {
-            href: 'https://github.com/5587',
+            href: 'https://github.com/afaq5587/Physical_AI_Book/tree/main',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/5587',
+                href: 'https://github.com/afaq5587/Physical_AI_Book/tree/main',
               },
             ],
           },
