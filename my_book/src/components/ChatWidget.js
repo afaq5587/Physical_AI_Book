@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatWidget.css';
+import { authClient } from '../lib/auth-client';
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,8 +8,19 @@ const ChatWidget = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
+  const [session, setSession] = useState(null);
+
   const recognitionRef = useRef(null);
   const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    // Check session on mount just to get user name if available
+    const checkSession = async () => {
+      const { data } = await authClient.getSession();
+      setSession(data);
+    };
+    checkSession();
+  }, []);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -66,6 +78,13 @@ const ChatWidget = () => {
     }
   };
 
+  const handleLogout = async () => {
+    await authClient.signOut();
+    setSession(null);
+    // Optionally redirect or show a message
+    window.location.reload();
+  };
+
   const handleSendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -75,8 +94,10 @@ const ChatWidget = () => {
     setInput('');
     setIsLoading(true);
 
+    const API_URL = "https://backend-nine-black-50.vercel.app/chat";
+
     try {
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -111,9 +132,26 @@ const ChatWidget = () => {
               </svg>
               AI Assistant
             </h3>
-            <button className="close-btn" onClick={toggleChat}>×</button>
+            <div className="header-actions">
+              {session && (
+                <button className="logout-btn" onClick={handleLogout} title="Logout">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16px" height="16px">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4v2H5v14h4v2zm7-10v-4l7 5-7 5v-4H9v-2h7z"/>
+                  </svg>
+                </button>
+              )}
+              <button className="close-btn" onClick={toggleChat}>×</button>
+            </div>
           </div>
+
           <div className="chat-messages">
+            {messages.length === 0 && (
+              <div className="chat-welcome">
+                <p>
+                  {session ? `Welcome back, ${session.user.name}!` : "Hello! How can I help you today?"}
+                </p>
+              </div>
+            )}
             {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.sender}`}>
                 {msg.text}

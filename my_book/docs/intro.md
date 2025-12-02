@@ -69,4 +69,4 @@ We encourage you to actively engage with the code, experiment with the projects,
 
 ---
 
-**Next Chapter**: [Chapter 1: The Robotic Nervous System (ROS 2)](/docs/chapter-1-ros2) →
+**Next Chapter**: [Chapter 1: The Robotic Nervous System (ROS 2)](/chapter-1-ros2) →

@@ -1,38 +1,41 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.nox/
-.eggs/
-*.egg-info/
-*.egg
-instance/
-.web-venv/
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
 
-# Node / Docusaurus
-node_modules/
-npm-debug.log
-npm-debug.log*
-yarn-error.log
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-dist/
-build/
-.npm/
-.yarn/
-.cache/
-.docusaurus
-.cache-loader
+# testing
+/coverage
+
+# production
+/build
+
+# misc
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/my_book/node_modules
+/my_book/build
+/my_book/.docusaurus
+auth-server/.env
+auth-server/auth.db
+my_book/venv
+/venv
+.python-version
+.venv
+/my_book/backend/venv
+/my_book/backend/.venv
+*.pyc
+__pycache__/
+.pytest_cache
+.ruff_cache
+auth-server/node_modules
+auth-server/dist
+.env
+*.db

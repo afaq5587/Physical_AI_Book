@@ -26,6 +26,7 @@ const sidebars = {
         'chapter-2-digital-twin',
         'chapter-3-ai-robot-brain',
         'chapter-4-vla',
+        'chapter-5-deployment-edge-robotics',
       ],
     },
     {
@@ -33,7 +34,6 @@ const sidebars = {
       label: 'Hardware and Resources',
       items: [
         'hardware-requirements',
-        'resources',
       ],
     },
   ],

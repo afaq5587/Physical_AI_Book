@@ -4,14 +4,14 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Physical AI & Humanoid Robotics',
-  tagline: 'Bridging Digital Intelligence with Physical Reality',
+  title: "Physical AI & Humanoid Robotics",
+  tagline: "Bridging Digital Intelligence with Physical Reality",
   // favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -20,41 +20,40 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: "https://your-docusaurus-site.example.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/physical-ai-textbook/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'yourusername', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-textbook', // Usually your repo name.
+  organizationName: "yourusername", // Usually your GitHub org/user name.
+  projectName: "physical-ai-textbook", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          routeBasePath: '/', // Serve docs at the site's root
+          sidebarPath: "./sidebars.js",
+          routeBasePath: "/", // Serve docs at the site's root
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.https://github.com/afaq5587/Physical_AI_Book/tree/main/',
+            "https://github.com/afaq5587/Physical_AI_Book/tree/main/my_book/",
         },
-        theme: {
-        },
+        theme: {},
       }),
     ],
   ],
@@ -63,48 +62,53 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: "img/docusaurus-social-card.jpg",
       colorMode: {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Physical AI',
+        title: "Physical AI",
         // logo: {
         //   alt: 'My Site Logo',
         //   src: 'img/logo.svg',
         // },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Course',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Course",
           },
           {
-            href: 'https://github.com/afaq5587/Physical_AI_Book/tree/main',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/afaq5587/Physical_AI_Book/tree/main",
+            label: "GitHub",
+            position: "right",
+          },
+          {
+            to: "/auth",
+            label: "Sign In",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Course',
-                to: '/docs/intro',
+                label: "Course",
+                to: "/intro",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/afaq5587/Physical_AI_Book/tree/main',
+                label: "GitHub",
+                href: "https://github.com/afaq5587/Physical_AI_Book/tree/main",
               },
             ],
           },
@@ -112,13 +116,13 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Physical AI Textbook. Built with Docusaurus.`,
       },
       prism: {
-        additionalLanguages: ['python', 'cpp', 'bash', 'yaml'],
+        additionalLanguages: ["python", "cpp", "bash", "yaml"],
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
   markdown: { mermaid: true },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
 };
 
 export default config;
